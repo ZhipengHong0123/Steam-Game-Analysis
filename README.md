@@ -28,7 +28,7 @@ Predict Voted up.....
 ## Decision Tree  
 
 ## Random Forest  
-We also built Random Forest to predict whether a user will vote up for a game. Since we have 100k+ rows, it's hard to implement Random Forest on all features. So we need to select the feature and use feature engineering to get more predictive features. So we choose `"appid"`,`"platforms"`,`"num_games_owned"`,`"num_reviews","developer"`,`"price","publisher"`,`"playtime_at_review"` and `"playtime_forever"` to predict `"voted_up"`. Since the review also contains lots of information, we used **vaderSentiment** a package in Python that can convert text into the sentimental score. By defining a UDF function(user define function), we convert review context into the sentimental score in Spark Dataframe.   
+We also built Random Forest to predict whether a user will vote up for a game. Since we have 100k+ rows, it's hard to implement Random Forest on all features. So we need to select the feature and use feature engineering to get more predictive features. So we choose `"appid"`,`"platforms"`,`"num_games_owned"`,`"num_reviews"`,`"developer"`,`"price"`,`"publisher"`,`"playtime_at_review"` and `"playtime_forever"` to predict `"voted_up"`. Since the review also contains lots of information, we used **vaderSentiment** a package in Python that can convert text into the sentimental score. By defining a UDF function(user define function), we convert review context into the sentimental score in Spark Dataframe.   
 
 We built Random Forest and used cross-validation to search for our best model.
 
@@ -58,6 +58,3 @@ cv = CrossValidator(estimator=rf,
 
 
 # Game Recommendation
-
-
-## test from renne
