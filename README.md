@@ -117,18 +117,6 @@ As the model evaluation accuracy is only 0.79 which did not meet our expectation
 
 
 ## Random Forest  
-
-```python
-rf = RandomForestClassifier()
-evaluator = BinaryClassificationEvaluator().setLabelCol("label").setMetricName("areaUnderPR")
-paramGrid = ParamGridBuilder().addGrid(rf.maxDepth, [10,15]).addGrid(rf.maxBins, [6000]).addGrid(rf.numTrees,[10,15]).build()
- 
-cv = CrossValidator(estimator=rf, 
-                    evaluator=evaluator, 
-                    numFolds=3, 
-                    estimatorParamMaps=paramGrid)
-...
-```
 We also built a Random Forest model to predict whether a user will vote up for a game. Since we have 100k+ rows, it's hard to implement Random Forest on all features. So we need to select the feature and use feature engineering to get more predictive features. So we choose `"appid"`,`"platforms"`,`"num_games_owned"`,`"num_reviews"`,`"developer"`,`"price"`,`"publisher"`,`"playtime_at_review"` and `"playtime_forever"` to predict `"voted_up"`. Since the review contains useful details, we defined a UDF funtion (user define function) which used **vaderSentiment**, a package in Python, to convert text into sentimental score in Spark Dataframe.   
 
 We built Random Forest and used cross-validation to search for our best model.
