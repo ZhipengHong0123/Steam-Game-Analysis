@@ -149,11 +149,30 @@ After fitting the model, we can get feature importance from Random Forest. The r
 <img src="pictures/feature_importance_rf.png" width="550">
 
 ## Model Comparison
-| Model | Time | Validation Accuracy |
-|--------|--------|--------|
-| Logistic Regeression| 6 min 32 secs | 0.8424 |
-| Decision Tree| 2 hours 23 min 15 secs (4 iterations of grid search) | 0.8923 |
-| Random Forest| 48 min 22 secs | 0.974 | 
+<table width="743">
+<tbody>
+<tr>
+<td style="font-weight: 400;" width="230">Model</td>
+<td style="font-weight: 400;" width="234">Time</td>
+<td style="font-weight: 400;" width="279">Validation&nbsp;Accuracy</td>
+</tr>
+<tr>
+<td style="font-weight: 400;" width="230">Logistic&nbsp;Regeression</td>
+<td style="font-weight: 400;" width="234">6&nbsp;min&nbsp;32&nbsp;secs</td>
+<td style="font-weight: 400;" width="279">0.8424</td>
+</tr>
+<tr>
+<td style="font-weight: 400;" width="230">Decision&nbsp;Tree</td>
+<td style="font-weight: 400;" width="234">2&nbsp;hours&nbsp;23&nbsp;min&nbsp;15&nbsp;secs&nbsp;(4&nbsp;iterations&nbsp;of&nbsp;grid&nbsp;search)</td>
+<td style="font-weight: 400;" width="279">0.8923</td>
+</tr>
+<tr>
+<td style="font-weight: 400;" width="230"><b>Random&nbsp;Forest</b></td>
+<td style="font-weight: 400;" width="234"><b>48&nbsp;min&nbsp;22&nbsp;secs</b></td>
+<td style="font-weight: 400;" width="279"><b>0.974</b></td>
+</tr>
+</tbody>
+</table>
 
 # Game Recommendation
 Commercial success of modern games hinges on player satisfaction and retention. So we did collaborative filtering recommendation via alternative least squares (ALS) algorithm. This Spark model only accepts user-item matrix for now (Year 2022), so we picked `"steamid"`,`"appid"`as user and item features, and treat `"voted-up"` as explicit rating.
