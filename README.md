@@ -71,7 +71,8 @@ The dataset contains:
 # User Segmentation  
 
 # Predictive Models
-Predict Voted up.....
+In this section, we try to figure out what features are important in determining whether steam players are more likely to 'voted up' a steam game and compare the performance of logistic regression model, decision tree and random forest.
+
 ## Logistic Regeression  
 
 ## Decision Tree 
