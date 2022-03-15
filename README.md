@@ -86,11 +86,11 @@ cv = CrossValidator(estimator=dt,
                     estimatorParamMaps=paramGrid)
 ...
 ```
-We trained a Decison Tree model to understand what features are important in determining whether steam players would prefer to 'voted up' a steam game. We performed data preprocessing such as identify textual columns as categorical variables (`"StringIndexer`"), map categorical variables to columns of binary vectors (`"OneHotEncoder`") and combine the numerical features into a single vector column (`"VectorAssembler`") to formalize the data. We then used the `"DecisionTreeClassifier"` to train and fit the 80% data as the training set and controlled the `"maxDepth=10`".  Our feature importance graph is shown below:  
+We trained a Decison Tree model to understand what features are important in determining whether steam players would prefer to 'voted up' a steam game. We performed data preprocessing such as identifing textual columns as categorical variables (`"StringIndexer`"), mapping categorical variables to columns of binary vectors (`"OneHotEncoder`") and combining the numerical features into a single vector column (`"VectorAssembler`") to formalize the data. We then used the `"DecisionTreeClassifier"` to train and fit the 80% data as the training set and controlled the `"maxDepth=10`".  Our feature importance graph is shown below:  
 <img src="pictures/feature_importance_tree.png" width="750">
 
-This graph indicated that the reviews those are more helpful/funny to other users tend to decide whether this review’s owner would  recommend this game. It makes sense as if this review got many helpful/funny tags, this means that the user took it seriously when they wrote reviews. Also, whether the user recommend a game corresponded to the number of hours user played the game and the number of negative ratings to the game. 
-As the model evaluation accuracy is only 0.79 which did not meet our expectations，I did the cross validation process and gird search the best model by trying 4 different `"maxDepth"` values. Compared with the evaluation result, the accuracy score for the cross validation increased to 0.89.
+This graph indicated that the reviews those are more helpful/funny to other users tend to decide whether this review’s owner would recommend this game. It makes sense as if the user took it seriously to write the review, it might get many helpful/funny tags. Also, whether the user recommending a game corresponds to the number of hours user played the game and the number of negative ratings to the game. 
+As the model evaluation accuracy is only 0.79 which did not meet our expectations，we did the cross validation process and grid searched the best model by trying 4 different `"maxDepth"` values. As the result, the accuracy score for the cross validation increased to 0.89.
 
 <table width="120">
 <tbody>
