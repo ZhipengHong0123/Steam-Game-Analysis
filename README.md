@@ -7,10 +7,10 @@ This is a team project to analyze steam games using Databricks. We created Mongo
 We have two different data:
 
 * Steam Review data: Features about each review.  
-<img src="pictures/review_info.png" width="350" >  
+<img src="pictures/review_info.png" width="350" align="right" >  
 
 * Steam Games data: contains features about the game.
-<img src="pictures/game_info.png" width="350" >
+<img src="pictures/game_info.png" width="350" align="right" >
   
 
 # User Segmentation  
