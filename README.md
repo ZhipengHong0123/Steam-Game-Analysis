@@ -44,7 +44,8 @@ cv = CrossValidator(estimator=rf,
 ...
 ```
 After fitting the model, we can get feature importance from Random Forest. The result shows that sentimental score is the model important feature in the model. Playtime, Developer, and Price are also important to predict Voted up. Then we tested the best model on the validation set, the accuracy is about 0.97.
-<img src="pictures/feature_importance_rf.png" width="300">
+
+<img src="pictures/feature_importance_rf.png" width="500">
 
 
 
