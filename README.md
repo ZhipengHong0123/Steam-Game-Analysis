@@ -60,13 +60,13 @@ After fitting the model, we can get feature importance from Random Forest. The r
 
 
 # Game Recommendation
-Commercial success of modern games hinges on player satisfaction and retention. So we also did collaborative filtering recommendation via alternative least squares (ALS) algorithm. This spark model only accepts user-item matrix for now (Year 2022), so we picked `"steamid"`,`"appid"`as user and item features, and trait `"voted-up"` as explicit rating.
+Commercial success of modern games hinges on player satisfaction and retention. So we did collaborative filtering recommendation via alternative least squares (ALS) algorithm. This Spark model only accepts user-item matrix for now (Year 2022), so we picked `"steamid"`,`"appid"`as user and item features, and treat `"voted-up"` as explicit rating.
 
 To improve model perfermance, we decided to filter out cold starters and set thresholds:
 1. Take off 'unpopular' games (less than 100 user rating)
 2. Take off 'unfrequent' users (rated less than 10 games)
 
-Also, we encoded steamid and appid with indexStringColumns to compress the data. And converted all data to integer to comply with the model setting. Below are the code of modeling:
+Also, we encoded steamid and appid with indexStringColumns to compress the data. And converted all data to integer to comply with the model setting.
 
 ```python
 als = ALS(maxIter=5, regParam=0.01, userCol="steamid", 
@@ -83,9 +83,9 @@ evaluator = RegressionEvaluator(metricName="rmse", labelCol="rating",
 rmse = evaluator.evaluate(predictions)
 print("Root-mean-square error = " + str(rmse))
 ```
-A predictable model normally come with 0.2~0.5 RMSE, and you can use this metric to check the model effectiveness.
+A useful predictive model normally come with 0.2~0.5 RMSE, and you can use this metric to check the model effectiveness.
 
-We finally used the model to predict top 10 recommendated games to each user in the validation data set:
+We finally leveraged the model to predict top 10 recommendated games to each user in the validation data set:
 ```python
 userRecs = model.recommendForAllUsers(10)
 userRecs.show()
