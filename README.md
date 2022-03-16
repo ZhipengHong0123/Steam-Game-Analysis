@@ -16,7 +16,6 @@ With many extremely popular games on steam such as PUBG, Dota 2 and Counter Stri
 - Figure out what features are important in determining whether steam players are more likely to 'voted up' a steam game and compare the performance of decision tree, logistic regression model and random forest.
 - Provide game recommendations to each validation user using collaborative filtering by ALS model. 
 
------
 ## Datasets
 
 ### Steam Review data: 
