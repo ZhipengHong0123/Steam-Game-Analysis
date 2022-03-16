@@ -2,11 +2,11 @@
 
 ## Intro
 
-A project to study Steam games and user review data, involving classification, prediction and recommedation analysis. Our team members are Zhipeng Hong (zhong5@usfca.edu ), Haotian Gong (hgong12@usfca.edu), Zihao Ren (zren20@usfca.edu), Zhiyi Ren (zren15@usfca.edu) and Xinyue Wang (xwang241@usfca.edu). This project was done during University of San Francisco MSDS 2022 Distributed Data System.
+A project to study Steam games and user review data, involving classification, prediction and recommedation analysis. Our team members are Zhipeng Hong (zhong5@usfca.edu), Haotian Gong (hgong12@usfca.edu), Zihao Ren (zren20@usfca.edu), Zhiyi Ren (zren15@usfca.edu) and Xinyue Wang (xwang241@usfca.edu). This project was done during University of San Francisco MSDS 2022 Distributed Data System.
 
 Link to project presentation: [click here](https://github.com/ZhipengHong0123/Steam-Game-Analysis/blob/main/report/Group10_Slides.pdf)
 
-<img src="pictures/pipeline.png" width="350" align="right"> In this project, we created **MongoDB Atlas** and sharded the data into three clusters to improve the efficiency of reading and writing data. Then we created a data pipeline to access **20GB+** of raw data from **Amazon S3** and transferred the cleaned data to MongoDB Atlas. After performing data preprocessing, we loaded data from MongoDB Atlas and applied machine learning algorithms in a distributed system in **Databricks** using **Spark ML**.
+<img src="pictures/pipeline.png" width="350" align="right"> In this project, we created **MongoDB Atlas** and sharded the data into three clusters to improve the efficiency of reading and writing data. Then we created a data pipeline to access **20GB+** of raw data from **AWS S3** and transferred the cleaned data to MongoDB Atlas. After performing data preprocessing, we loaded data from MongoDB Atlas and applied machine learning algorithms in a distributed system in **Databricks** using **Spark ML**.
 
 ## Motivation
 With many extremely popular games on steam such as PUBG, Dota 2 and Counter Strike GO, all of which have religious followings, tens of thousands of reviews and high ratings. Using a data-driven approach, we wanted to explore the user preference and help game developers and game studios maximize the chances of success for their products. 
