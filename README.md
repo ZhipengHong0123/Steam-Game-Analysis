@@ -73,6 +73,38 @@ The dataset contains:
 In this section, we try to figure out what features are important in determining whether steam players are more likely to 'voted up' a steam game and compare the performance of logistic regression model, decision tree and random forest.
 
 ## Logistic Regeression  
+We first fitted a Logistic Regression model to quickly get a baseline of determining whether steam players would 'voted up' a steam game. We included all the features except the 'id' like features and review text(doing further text analysis later). 
+
+```python
+from pyspark.ml.classification import LogisticRegression
+lr = LogisticRegression(regParam=0.01, maxIter=100, fitIntercept=True)
+lrmodel = lr.fit(train)
+...
+```
+With this model training, we finally got validation accuracy 0.84240 and f1 score 0.84244. And here is the Confusion Matrix:
+
+<table width="120">
+<tbody>
+<tr>
+<td style="font-weight: 300;" colspan="3" width="120">Confusion&nbsp;Matrix</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td style="font-weight: 300;" width="53">Actually&nbsp;Positive&nbsp;(1)</td>
+<td style="font-weight: 300;" width="51">Actually&nbsp;Negative&nbsp;(0)</td>
+</tr>
+<tr>
+<td style="font-weight: 300;" width="51">Predicted&nbsp;Positive&nbsp;(1)</td>
+<td style="font-weight: 300;" width="53"><b>1,998,915</b></td>
+<td style="font-weight: 300;" width="51">6,792</td>
+</tr>
+<tr>
+<td style="font-weight: 300;" width="51">Predicted&nbsp;Negative&nbsp;(0)</td>
+<td style="font-weight: 300;" width="53">246,068</td>
+<td style="font-weight: 300;" width="51"><b>10,257</b></td>
+</tr>
+</tbody>
+</table>
 
 ## Decision Tree 
 
