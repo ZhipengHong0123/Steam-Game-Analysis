@@ -81,7 +81,7 @@ lr = LogisticRegression(regParam=0.01, maxIter=100, fitIntercept=True)
 lrmodel = lr.fit(train)
 ...
 ```
-<img src="pictures/logistic_roc.png">
+<img src="pictures/logistic_roc.png"/> <img src="pictures/logistic_pr.png"/> 
 
 With this model training details, we finally got validation accuracy 0.84240 and f1 score 0.84244. And here is the Confusion Matrix:
 
