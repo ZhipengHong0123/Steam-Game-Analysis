@@ -68,6 +68,13 @@ The dataset contains:
 - 27,075 games info
 
 # User Segmentation  
+K-means and its related algorithms are used in many areas to help us quickly build an initial sniff of the data. K-means is a simple, fast, very intuitive algorithm. First we tried multiple different center numbers and calculate their heterogenity. Then based on the 'Elbow Rule', we first segment our steamer into 4 categories. 
+
+<img src="pictures/elbow.png" width="400">
+
+After we assign every steamer into its group, we do find interest fun facts of each group. All the statistics are the average of that group of steamers.
+
+<img src="pictures/segemantation.png" width="850">
 
 # Predictive Models
 In this section, we try to figure out what features are important in determining whether steam players are more likely to 'voted up' a steam game and compare the performance of logistic regression model, decision tree and random forest.
