@@ -69,7 +69,24 @@ The dataset contains:
 
 # User Segmentation  
 K-means and its related algorithms are used in many areas to help us quickly build an initial sniff of the data. K-means is a simple, fast, very intuitive algorithm. First we tried multiple different center numbers and calculate their heterogenity. Then based on the 'Elbow Rule', we first segment our steamer into 4 categories. 
-
+```python
+def K_means(df, center=2):
+    kmeans =  KMeans(k = center, maxIter = 50, tol = 0.1,seed=2) 
+    model = kmeans.fit(df)
+    predictions = model.transform(df)
+    evaluator = ClusteringEvaluator()
+    silhouette = evaluator.evaluate(predictions)
+    return center,silhouette,predictions
+hetero_lst = []
+center_lst = []
+predict_df_lst= []
+for i in range(2, 15):
+    center, silhouette,pred_df = K_means(df_model, i)
+    hetero_lst.append(silhouette)
+    center_lst.append(center)
+    predict_df_lst.append(pred_df)
+...
+```
 <img src="pictures/elbow.png" width="400">
 
 After we assign every steamer into its group, we do find interest fun facts of each group. All the statistics are the average of that group of steamers.
